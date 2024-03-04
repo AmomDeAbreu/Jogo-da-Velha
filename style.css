@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+body{
+    background-color: rgb(27, 27, 27);
+    color: blanchedalmond;
+    font-family: "Poppins", sans-serif;
+}
+
+h1{
+    justify-content: center;
+    display: flex;
+}
+
+#matriz{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+table, td{
+    width: 30%;
+    height: 40%;
+}
+
+table, td, th{
+
+    padding: 10%;
+    border: 3px solid rgb(27, 27, 27);
+    border-collapse: collapse;
+    border-radius: 4px;
+}
+
+th{
+    cursor: pointer;
+}
+
+th, td{
+    background-color: blanchedalmond;
+    height: 60%;
+    width: 30%;
+}
+
+.clicado{
+    color: rgb(27, 27, 27);
+    font-size: 100px;
+}
+
+footer{
+    margin-top: 8%;
+    text-align: center;
+    font-size: 60%;
+}
