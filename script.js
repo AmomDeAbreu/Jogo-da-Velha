@@ -1,5 +1,5 @@
-const column = [...document.querySelectorAll(".coluna")];
-const line = [...document.querySelectorAll(".linha")];
+const elementos = [...document.querySelectorAll(".linha")];
+
 
 let matriz = new Array(3);
 for(let i = 0; i < 3; i++){
@@ -12,33 +12,38 @@ for(i = 0; i < 3; i++){
     }
 }
 
-column.map((el,i) =>{
-    el.addEventListener("click", () =>{
-        el.classList.add("clicado");
-        el.innerHTML = "X";
-        console.log(el)
-        if(i == 0)
-            matriz[0][0] = 1;
-        else if(i == 1){
-            matriz[0][1] = 1;
-        } else if(i == 2){
-            matriz[0][2] = 1;
-        } else if(i == 3){
-            matriz[1][0] = 1;
-        } else if(i == 4){
-            matriz[1][1] = 1;
-        } else if(i == 5){
-            matriz[1][2] = 1;
-        } else if(i == 6){
-            matriz[2][0] = 1;
-        } else if(i == 7){
-            matriz[2][1] = 1;
-        } else if(i == 8){
-            matriz[2][2] = 1;
-        }
-        console.log(matriz)
-        if(matriz[0][0] == 1 && matriz[0][1] == 1 && matriz[0][2] == 1)
-            console.log('óia só')
-    })
 
+function verficador(array,index){
+        array.push(index);
+    console.log(array)
+    if(array[0] == array[1] && array[0] == array[2]){
+        console.log("funcionaaaaaaa");
+    } else if (array[0] == 0 && array[1] == 1 && array[2] == 2){
+        console.log("funcionaaaaaa")
+    }
+}
+
+let time = 0;
+let array_colunas_clicadas_x = [];
+let array_colunas_clicadas_o = []
+elementos.map((el) => {
+    let column1_count = 0;
+    const colunas_separadas = [...el.children]
+    colunas_separadas.map((e, i) => {
+        e.addEventListener("click", () => {
+            e.classList.add("clicado");
+            if(time == 0){
+                e.innerHTML = "X";
+                time = 1
+                verficador(array_colunas_clicadas_x, i);
+            } else {
+                e.innerHTML = "O";
+                time = 0;
+                verficador(array_colunas_clicadas_o, i);
+            }
+        })
+
+
+    })
 })
+
