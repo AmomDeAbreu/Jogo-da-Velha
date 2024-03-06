@@ -65,6 +65,7 @@ elementos.map((el, i_l) => {
             }
             res.innerHTML = "";
             is_playing = true;
+            time = 0;
         })
 
     })

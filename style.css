@@ -50,7 +50,7 @@ footer{
     font-size: 20px;
 }
 
-P{
+p{
     display: flex;
     justify-content: center;
 }
